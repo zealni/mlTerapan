@@ -85,6 +85,31 @@ Dataset berisi 1319 entri dan 9 kolom:
 ![confusion matrix logistic](gambar/confusion_logistic.png)
 ![confusion matrix random forest](gambar/confusion_randomforest.png)
 
+## 📋 Classification Report
+
+### 🔍 Random Forest Classification Report
+
+| Class | Precision | Recall | F1-score | Support |
+|-------|-----------|--------|----------|---------|
+| 0     | 0.98      | 0.97   | 0.98     | 101     |
+| 1     | 0.98      | 0.99   | 0.98     | 163     |
+|       |           |        |          |         |
+| **Accuracy**     |        |          | **0.98** | 264     |
+| **Macro avg**    | 0.98   | 0.98     | 0.98     | 264     |
+| **Weighted avg** | 0.98   | 0.98     | 0.98     | 264     |
+
+---
+
+### 🔍 Logistic Regression Classification Report
+
+| Class | Precision | Recall | F1-score | Support |
+|-------|-----------|--------|----------|---------|
+| 0     | 0.76      | 0.69   | 0.73     | 101     |
+| 1     | 0.82      | 0.87   | 0.84     | 163     |
+|       |           |        |          |         |
+| **Accuracy**     |        |          | **0.80** | 264     |
+| **Macro avg**    | 0.79   | 0.78     | 0.78     | 264     |
+| **Weighted avg** | 0.80   | 0.80     | 0.80     | 264     |
 
 **Metrik:**
 - **Accuracy**: jumlah prediksi benar dibagi total data.
