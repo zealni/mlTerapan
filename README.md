@@ -76,13 +76,15 @@ Dataset berisi 1319 entri dan 9 kolom:
 **Feature Importance (Random Forest):**
 - `troponin` (57%) dan `kcm` (26%) adalah fitur paling berpengaruh.
 
+  
+![Kurva Roc](gambar/roc.png)
 **Pemilihan Model Terbaik:**
 - Random Forest dipilih sebagai model terbaik karena akurasi dan ROC AUC yang lebih tinggi.
 
 ## 📈 Evaluation
 ![confusion matrix logistic](gambar/confusion_logistic.png)
 ![confusion matrix random forest](gambar/confusion_randomforest.png)
-![Kurva Roc](gambar/roc.png)
+
 
 **Metrik:**
 - **Accuracy**: jumlah prediksi benar dibagi total data.
