@@ -42,8 +42,9 @@ Dataset berisi 1319 entri dan 9 kolom:
 - `class`: Target klasifikasi (positive = serangan jantung, negative = tidak)
 
 ### Visualisasi dan Analisis:
-[distribusi kelas](gambar/distribusi_kelas.png) 
-[heatmap korelasi](gambar/heatmap_korelasi.png)
+![distribusi kelas](gambar/distribusi_kelas.png)
+![heatmap korelasi](gambar/heatmap_korelasi.png)
+
 - Distribusi target tidak seimbang (61% positif).
 - Korelasi tertinggi dengan kelas target: `troponin` dan `kcm`.
 
