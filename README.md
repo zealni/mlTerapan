@@ -77,8 +77,10 @@ Dataset berisi 1319 entri dan 9 kolom:
 - Random Forest dipilih sebagai model terbaik karena akurasi dan ROC AUC yang lebih tinggi.
 
 ## 📈 Evaluation
-![distribusi kelas](gambar/confusion_logistic.png)
-![heatmap korelasi](gambar/confusion_randomforest.png)
+![confusion matrix logistic](gambar/confusion_logistic.png)
+![confusion matrix random forest](gambar/confusion_randomforest.png)
+![Kurva Roc](gambar/roc.png)
+
 **Metrik:**
 - **Accuracy**: jumlah prediksi benar dibagi total data.
 - **F1-Score**: rata-rata harmonis precision dan recall. Berguna untuk data tidak seimbang.
