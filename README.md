@@ -69,7 +69,8 @@ Dataset berisi 1319 entri dan 9 kolom:
 - Model linier sederhana.
 - Keunggulan: mudah diinterpretasi, cepat.
 - Kekurangan: kurang fleksibel untuk data kompleks.
-
+  
+![fitur importance](gambar/feature_importance.png)
 **Feature Importance (Random Forest):**
 - `troponin` (57%) dan `kcm` (26%) adalah fitur paling berpengaruh.
 
