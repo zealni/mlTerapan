@@ -1,5 +1,5 @@
 
-# 🧠 Heart Attack Prediction Project - Arief Setiawan
+# 🫀 Heart Attack Prediction Project - Arief Setiawan
 
 ## 📌 Domain Proyek
 
