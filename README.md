@@ -1,14 +1,13 @@
-
 # 🫀 Heart Attack Prediction Project - Arief Setiawan
 
 ## 📌 Domain Proyek
 
-Penyakit jantung merupakan penyebab utama kematian secara global. Organisasi Kesehatan Dunia (WHO) melaporkan bahwa 17,9 juta orang meninggal setiap tahun akibat penyakit kardiovaskular, termasuk serangan jantung. Kondisi ini menuntut deteksi dini agar penanganan dapat dilakukan secara cepat dan tepat.
+Penyakit jantung merupakan penyebab utama kematian secara global. Deteksi dini sangat penting agar penanganan dapat dilakukan secara cepat dan tepat. Teknologi machine learning memberikan potensi besar untuk membantu tenaga medis dalam memprediksi risiko serangan jantung secara efisien.
 
-Masalah ini harus diselesaikan karena serangan jantung sering kali terjadi secara mendadak. Dengan bantuan teknologi seperti machine learning, kita dapat membangun sistem prediksi yang membantu tenaga medis dalam membuat keputusan berbasis data.
+**Referensi:**  
+[World Health Organization - Cardiovascular Diseases (2023)](https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds))
 
-**Referensi:**
-World Health Organization. (2023). Cardiovascular diseases (CVDs). [https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)](https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds))
+---
 
 ## 🎯 Business Understanding
 
@@ -17,115 +16,123 @@ World Health Organization. (2023). Cardiovascular diseases (CVDs). [https://www.
 - Fitur apa yang paling berkontribusi terhadap prediksi serangan jantung?
 
 ### Goals
-- Mengembangkan model prediksi klasifikasi serangan jantung.
-- Mengidentifikasi fitur paling penting untuk prediksi serangan jantung.
+- Mengembangkan model klasifikasi serangan jantung.
+- Mengidentifikasi fitur paling penting dalam prediksi.
 
 ### Solution Statements
-- Menggunakan dua algoritma: **Random Forest Classifier** dan **Logistic Regression** untuk membandingkan performa.
-- Menggunakan metrik evaluasi seperti **Accuracy**, **F1-score**, dan **ROC AUC** untuk mengukur performa model.
+- Menggunakan dua algoritma: **Random Forest Classifier** dan **Logistic Regression**.
+- Mengukur performa model dengan **Accuracy**, **F1-Score**, dan **ROC AUC**.
 - Memilih model terbaik berdasarkan hasil evaluasi.
-
-## 📊 Data Understanding
-
-Dataset diambil dari Kaggle:
-**Link:** [https://www.kaggle.com/datasets/bharath011/heart-disease-classification-dataset](https://www.kaggle.com/datasets/bharath011/heart-disease-classification-dataset)
-
-Dataset berisi 1319 entri dan 9 kolom:
-- `age`: Usia pasien
-- `gender`: Jenis kelamin (0 = perempuan, 1 = laki-laki)
-- `impluse`: Detak jantung
-- `pressurehight`: Tekanan darah atas (sistolik)
-- `pressurelow`: Tekanan darah bawah (diastolik)
-- `glucose`: Kadar glukosa darah
-- `kcm`: Kadar kalium
-- `troponin`: Kadar troponin (indikator kerusakan otot jantung)
-- `class`: Target klasifikasi (positive = serangan jantung, negative = tidak)
-
-### Visualisasi dan Analisis:
-![distribusi kelas](gambar/distribusi_kelas.png)
-![heatmap korelasi](gambar/heatmap_korelasi.png)
-- Distribusi target tidak seimbang (61% positif).
-- Korelasi tertinggi dengan kelas target: `troponin` dan `kcm`.
-
-## 🧹 Data Preparation
-
-**Langkah:**
-1. Encoding target `class` menjadi numerik (0/1).
-2. Normalisasi fitur numerik dengan `StandardScaler`.
-3. Split data ke training/testing (80:20).
-
-**Alasan:**
-- Encoding diperlukan untuk kompatibilitas model ML.
-- Normalisasi membantu proses pelatihan menjadi lebih stabil dan efisien.
-
-## 🤖 Modeling
-
-**Model 1: Random Forest**
-- Algoritma ansambel berbasis pohon keputusan.
-- Keunggulan: akurat, mampu menangani data non-linear.
-- Kekurangan: lebih kompleks dan memakan waktu.
-
-**Model 2: Logistic Regression**
-- Model linier sederhana.
-- Keunggulan: mudah diinterpretasi, cepat.
-- Kekurangan: kurang fleksibel untuk data kompleks.
-
-  
-![fitur importance](gambar/feature_importance.png)
-
-**Feature Importance (Random Forest):**
-- `troponin` (57%) dan `kcm` (26%) adalah fitur paling berpengaruh.
-
-  
-![Kurva Roc](gambar/roc.png)
-**Pemilihan Model Terbaik:**
-- Random Forest dipilih sebagai model terbaik karena akurasi dan ROC AUC yang lebih tinggi.
-
-## 📈 Evaluation
-![confusion matrix logistic](gambar/confusion_logistic.png)
-![confusion matrix random forest](gambar/confusion_randomforest.png)
-
-## 📋 Classification Report
-
-### 🔍 Random Forest Classification Report
-
-| Class | Precision | Recall | F1-score | Support |
-|-------|-----------|--------|----------|---------|
-| 0     | 0.98      | 0.97   | 0.98     | 101     |
-| 1     | 0.98      | 0.99   | 0.98     | 163     |
-|       |           |        |          |         |
-| **Accuracy**     |        |          | **0.98** | 264     |
-| **Macro avg**    | 0.98   | 0.98     | 0.98     | 264     |
-| **Weighted avg** | 0.98   | 0.98     | 0.98     | 264     |
 
 ---
 
-### 🔍 Logistic Regression Classification Report
+## 📊 Data Understanding
 
-| Class | Precision | Recall | F1-score | Support |
-|-------|-----------|--------|----------|---------|
-| 0     | 0.76      | 0.69   | 0.73     | 101     |
-| 1     | 0.82      | 0.87   | 0.84     | 163     |
-|       |           |        |          |         |
-| **Accuracy**     |        |          | **0.80** | 264     |
-| **Macro avg**    | 0.79   | 0.78     | 0.78     | 264     |
-| **Weighted avg** | 0.80   | 0.80     | 0.80     | 264     |
+### Jumlah dan Kondisi Data
+- Jumlah entri: **1319 baris**, **9 kolom**.
+- **Missing value:** Tidak ditemukan.
+- **Duplikat:** Tidak ada.
+- **Outlier:** Terdeteksi pada `troponin` dan `glucose`, tidak dihapus karena bisa bernilai klinis.
 
-**Metrik:**
-- **Accuracy**: jumlah prediksi benar dibagi total data.
-- **F1-Score**: rata-rata harmonis precision dan recall. Berguna untuk data tidak seimbang.
-- **ROC AUC**: luas area di bawah kurva ROC.
+### Tautan Dataset
+- Kaggle: [Heart Disease Classification Dataset](https://www.kaggle.com/datasets/bharath011/heart-disease-classification-dataset)
 
-### Hasil Evaluasi:
+### Uraian Fitur
+| Fitur           | Deskripsi                                              |
+|------------------|--------------------------------------------------------|
+| `age`            | Usia pasien (tahun)                                    |
+| `gender`         | Jenis kelamin (0: perempuan, 1: laki-laki)             |
+| `impluse`        | Detak jantung                                          |
+| `pressurehight`  | Tekanan darah sistolik                                 |
+| `pressurelow`    | Tekanan darah diastolik                                |
+| `glucose`        | Kadar gula darah                                       |
+| `kcm`            | Kadar kalium dalam darah                               |
+| `troponin`       | Indikator kerusakan otot jantung                       |
+| `class`          | Target (1 = serangan jantung, 0 = tidak)               |
+
+---
+
+## 🧹 Data Preparation
+
+### Pemilihan Fitur dan Target
+- **Target:** `class`
+- **Fitur:** Semua kolom selain `class`
+
+### Tahapan Pemrosesan Data
+1. **Label Encoding**
+   - `class` diubah ke numerik: `positive` → `1`, `negative` → `0`.
+2. **Cek duplikat dan missing value**
+   - Tidak ditemukan duplikat atau missing value.
+3. **Normalisasi**
+   - Semua fitur numerik dinormalisasi menggunakan `StandardScaler`.
+4. **Split data**
+   - Proporsi 80% training dan 20% testing menggunakan `train_test_split`.
+
+---
+
+## 🤖 Modeling
+
+### Model 1: Random Forest Classifier
+
+#### Cara Kerja
+Random Forest adalah algoritma ansambel yang membentuk banyak decision tree dari subset data acak. Hasil akhir dipilih berdasarkan mayoritas voting dari semua pohon.
+
+#### Parameter
+- `n_estimators=100` (default)
+- `max_depth=None` (default)
+- `random_state=42`
+
+#### (Opsional) Kelebihan/Kekurangan
+- ✅ Akurat, cocok untuk data kompleks
+- ❌ Waktu inferensi lebih lama
+
+---
+
+### Model 2: Logistic Regression
+
+#### Cara Kerja
+Logistic Regression merupakan model linier yang menggunakan fungsi sigmoid untuk memetakan nilai input ke dalam probabilitas antara 0 dan 1.
+
+#### Parameter
+- `penalty='l2'` (default)
+- `solver='lbfgs'`
+- `random_state=42`
+
+#### (Opsional) Kelebihan/Kekurangan
+- ✅ Cepat dan mudah diinterpretasi
+- ❌ Kurang efektif untuk pola non-linier
+
+---
+
+## 📈 Evaluation
+
+### Metrik Evaluasi
+- **Accuracy**: proporsi prediksi yang benar.
+- **F1-Score**: rata-rata harmonis dari precision dan recall, cocok untuk data tidak seimbang.
+- **ROC AUC**: area di bawah kurva ROC, menunjukkan kemampuan model membedakan kelas.
+
+### Hasil Evaluasi
 
 | Model               | Accuracy | F1-Score (Positif) | ROC AUC |
 |--------------------|----------|--------------------|---------|
 | Random Forest       | 98.1%    | 0.985              | 0.991   |
 | Logistic Regression | 79.9%    | 0.842              | 0.884   |
 
-Random Forest menghasilkan performa yang unggul dalam semua metrik, menjadikannya pilihan utama untuk sistem prediksi ini.
+### Visualisasi
+- ![Confusion Matrix RF](gambar/confusion_randomforest.png)
+- ![Confusion Matrix LR](gambar/confusion_logistic.png)
+- ![ROC Curve](gambar/roc.png)
+- ![Feature Importance](gambar/feature_importance.png)
 
 ---
 
-**Catatan:** Laporan ini dibuat berdasarkan dataset publik dan dapat dikembangkan lebih lanjut menggunakan data real dari institusi kesehatan jika tersedia.
+### Dampak ke Business Understanding
 
+- **Problem terjawab:** Model dapat memprediksi risiko serangan jantung dengan akurasi tinggi.
+- **Goals tercapai:** Model dan fitur penting berhasil diidentifikasi.
+- **Solusi berdampak:** Random Forest terbukti menjadi solusi efektif dengan performa tinggi. Dapat diintegrasikan ke sistem klinis sebagai alat bantu diagnosis.
+
+---
+
+**Catatan:**  
+Model ini dapat dikembangkan lebih lanjut menggunakan data klinis real dan sistem API/dasbor interaktif untuk tenaga medis.
