@@ -78,8 +78,8 @@ Penyakit jantung merupakan penyebab utama kematian secara global. Deteksi dini s
 Random Forest adalah algoritma ansambel yang membentuk banyak decision tree dari subset data acak. Hasil akhir dipilih berdasarkan mayoritas voting dari semua pohon.
 
 #### Parameter
-- `n_estimators=100` (default)
-- `max_depth=None` (default)
+- `max_features='sqrt'` 
+- `min_samples_leaf=1` 
 - `random_state=42`
 
 #### (Opsional) Kelebihan/Kekurangan
@@ -94,8 +94,10 @@ Random Forest adalah algoritma ansambel yang membentuk banyak decision tree dari
 Logistic Regression merupakan model linier yang menggunakan fungsi sigmoid untuk memetakan nilai input ke dalam probabilitas antara 0 dan 1.
 
 #### Parameter
-- `penalty='l2'` (default)
-- `solver='lbfgs'`
+- `penalty='l2'` 
+- `solver='lbfgs'` 
+- `random_state=42`
+- `max_iter=1000`
 - `random_state=42`
 
 #### (Opsional) Kelebihan/Kekurangan
@@ -114,9 +116,9 @@ Logistic Regression merupakan model linier yang menggunakan fungsi sigmoid untuk
 ### Hasil Evaluasi
 
 | Model               | Accuracy | F1-Score (Positif) | ROC AUC |
-|--------------------|----------|--------------------|---------|
-| Random Forest       | 98.1%    | 0.985              | 0.991   |
-| Logistic Regression | 79.9%    | 0.842              | 0.884   |
+|---------------------|----------|--------------------|---------|
+| Random Forest       | 98.0%    | 0.98               | 0.991   |
+| Logistic Regression | 80.0%    | 0.84               | 0.884   |
 
 ### Visualisasi
 - ![Confusion Matrix RF](gambar/confusion_randomforest.png)
